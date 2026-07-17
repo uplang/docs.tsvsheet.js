@@ -1,5 +1,5 @@
 /**
- * Self-host @uplang/tsvsheet into the docs site's static assets.
+ * Self-host @tsvsheet/tsvsheet into the docs site's static assets.
  *
  * The `<tsv-sheet>` custom element (from the sibling tsvsheet.js repo) plus the
  * wasm engine it embeds are bundled/copied into static/tsvsheet/ so the Hugo

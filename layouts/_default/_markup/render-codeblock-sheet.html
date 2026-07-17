@@ -1,7 +1,7 @@
 {{- /*
   Render hook for ```sheet fenced blocks: turn the block's `.tsvt` source into a
   live-computing <tsv-sheet> custom element. The element is registered by the
-  self-hosted @uplang/tsvsheet module bundle (static/tsvsheet/tsv-sheet.bundle.js),
+  self-hosted @tsvsheet/tsvsheet module bundle (static/tsvsheet/tsv-sheet.bundle.js),
   loaded site-wide via params.enhanceScript in the site's baseof. The element
   reads its source from the `source` attribute first (see tsvsheet.js
   src/tsvsheet/tsv-sheet.js readSource); Hugo's html/template contextually escapes

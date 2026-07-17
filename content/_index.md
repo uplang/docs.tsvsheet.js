@@ -2,9 +2,9 @@
 title: tsvsheet.js
 ---
 
-**A `.tsvt` is a spreadsheet for plain text** — a single TAB-separated grid whose cells are literal values or `=formulas` in A1 notation (`B2`, `D2:D5`), computed in place. `@uplang/tsvsheet` brings that engine to JavaScript and the browser.
+**A `.tsvt` is a spreadsheet for plain text** — a single TAB-separated grid whose cells are literal values or `=formulas` in A1 notation (`B2`, `D2:D5`), computed in place. `@tsvsheet/tsvsheet` brings that engine to JavaScript and the browser.
 
-It is **not** a re-implementation: it embeds the exact [go-tsvsheet](https://uplang.github.io/docs.go-tsvsheet/) engine compiled to WebAssembly, so every computed value, error (`#REF!`, `#DIV/0!`, `#CIRC!`, …), and function matches the Go, CLI, and TUI implementations byte for byte — one engine everywhere. Use it in the browser or in Node.
+It is **not** a re-implementation: it embeds the exact [go-tsvsheet](https://tsvsheet.github.io/docs.go-tsvsheet/) engine compiled to WebAssembly, so every computed value, error (`#REF!`, `#DIV/0!`, `#CIRC!`, …), and function matches the Go, CLI, and TUI implementations byte for byte — one engine everywhere. Use it in the browser or in Node.
 
 ## Live
 
@@ -22,7 +22,7 @@ Nothing on this page is a screenshot: the table above is a `<tsv-sheet>` custom 
 ## Install
 
 ```console
-$ npm install @uplang/tsvsheet
+$ npm install @tsvsheet/tsvsheet
 ```
 
 ## Use
@@ -30,7 +30,7 @@ $ npm install @uplang/tsvsheet
 The engine loads asynchronously (the WebAssembly is instantiated once), then every call is synchronous. The API is **stateless** — you hold the `.tsvt` source string and pass it in:
 
 ```js
-import { load } from "@uplang/tsvsheet";
+import { load } from "@tsvsheet/tsvsheet";
 
 const engine = await load();
 
@@ -55,7 +55,7 @@ Drop a live spreadsheet into any page — no framework:
 
 ```html
 <script type="module">
-  import "@uplang/tsvsheet/tsv-sheet";
+  import "@tsvsheet/tsvsheet/tsv-sheet";
 </script>
 
 <tsv-sheet src="budget.tsvt"></tsv-sheet>
@@ -69,6 +69,6 @@ The package ships TypeScript declarations: `Engine`, `View`, `Grid`, `Diagnostic
 
 ## Related
 
-- **[go-tsvsheet](https://uplang.github.io/docs.go-tsvsheet/)** — the engine, as an importable Go library (and the source of the embedded `tsvsheet.wasm`).
-- **[tsvsheet.go](https://github.com/uplang/tsvsheet.go)** — the CLI, browser editor, and TUI.
-- **[tsvsheet](https://github.com/uplang/tsvsheet)** — the language and grammar specification.
+- **[go-tsvsheet](https://tsvsheet.github.io/docs.go-tsvsheet/)** — the engine, as an importable Go library (and the source of the embedded `tsvsheet.wasm`).
+- **[tsvsheet.go](https://github.com/tsvsheet/tsvsheet.go)** — the CLI, browser editor, and TUI.
+- **[tsvsheet](https://github.com/tsvsheet/tsvsheet)** — the language and grammar specification.

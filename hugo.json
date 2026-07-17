@@ -1,5 +1,5 @@
 {
-  "baseURL": "https://uplang.github.io/docs.tsvsheet.js/",
+  "baseURL": "https://tsvsheet.github.io/docs.tsvsheet.js/",
   "title": "tsvsheet.js",
   "publishDir": "_site",
   "enableRobotsTXT": true,
@@ -12,7 +12,7 @@
     }
   },
   "params": {
-    "description": "@uplang/tsvsheet — the tsvsheet engine in the browser and Node, as embedded WebAssembly with a typed API and a <tsv-sheet> web component.",
+    "description": "@tsvsheet/tsvsheet — the tsvsheet engine in the browser and Node, as embedded WebAssembly with a typed API and a <tsv-sheet> web component.",
     "enhanceScript": "tsvsheet/tsv-sheet.bundle.js"
   }
 }
