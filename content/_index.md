@@ -6,6 +6,19 @@ title: tsvsheet.js
 
 It is **not** a re-implementation: it embeds the exact [go-tsvsheet](https://uplang.github.io/docs.go-tsvsheet/) engine compiled to WebAssembly, so every computed value, error (`#REF!`, `#DIV/0!`, `#CIRC!`, …), and function matches the Go, CLI, and TUI implementations byte for byte — one engine everywhere. Use it in the browser or in Node.
 
+## Live
+
+This grid is **computing right now**, in your browser, on the very engine described above — no server. Every `=formula` is evaluated by the embedded WebAssembly. Click a cell, change a number, and press **Tab** or click away: the totals recompute instantly.
+
+```sheet
+Item	Qty	Price	Total
+Widget	3	4.50	=B2*C2
+Gadget	5	2.00	=B3*C3
+	Sum	=SUM(D2:D3)
+```
+
+Nothing on this page is a screenshot: the table above is a `<tsv-sheet>` custom element that Hugo emitted from a fenced `sheet` code block, upgraded in place by the self-hosted engine bundle.
+
 ## Install
 
 ```console

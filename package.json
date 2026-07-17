@@ -1,0 +1,12 @@
+{
+  "name": "docs.tsvsheet.js-assets",
+  "private": true,
+  "type": "module",
+  "description": "Build tooling for the docs site: self-hosts the @uplang/tsvsheet <tsv-sheet> web component + wasm engine into static/ so the Hugo sheet render hook works with no CDN.",
+  "scripts": {
+    "assets": "node scripts/build-assets.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}

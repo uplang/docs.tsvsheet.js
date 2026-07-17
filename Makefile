@@ -8,6 +8,11 @@ here := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 help: ## Show this help
 	@grep -hE '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "\033[36m%-10s\033[0m %s\n",$$1,$$2}'
 
+.PHONY: assets
+assets: ## Regenerate the self-hosted <tsv-sheet> bundle + wasm into static/ (needs Node + the sibling ../tsvsheet.js)
+	npm --prefix $(here) install
+	npm --prefix $(here) run assets
+
 .PHONY: serve
 serve: ## Preview the public docs locally
 	hugo server --source $(here)

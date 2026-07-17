@@ -12,6 +12,7 @@
     }
   },
   "params": {
-    "description": "@uplang/tsvsheet — the tsvsheet engine in the browser and Node, as embedded WebAssembly with a typed API and a <tsv-sheet> web component."
+    "description": "@uplang/tsvsheet — the tsvsheet engine in the browser and Node, as embedded WebAssembly with a typed API and a <tsv-sheet> web component.",
+    "enhanceScript": "tsvsheet/tsv-sheet.bundle.js"
   }
 }

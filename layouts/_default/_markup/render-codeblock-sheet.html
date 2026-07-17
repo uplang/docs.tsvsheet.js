@@ -1,0 +1,16 @@
+{{- /*
+  Render hook for ```sheet fenced blocks: turn the block's `.tsvt` source into a
+  live-computing <tsv-sheet> custom element. The element is registered by the
+  self-hosted @uplang/tsvsheet module bundle (static/tsvsheet/tsv-sheet.bundle.js),
+  loaded site-wide via params.enhanceScript in the site's baseof. The element
+  reads its source from the `source` attribute first (see tsvsheet.js
+  src/tsvsheet/tsv-sheet.js readSource); Hugo's html/template contextually escapes
+  .Inner in the attribute, so cells containing < or & are safe, while the TAB
+  column separators and newline row separators pass through verbatim. The
+  highlighted source stands in as fallback until the module upgrades the element.
+*/ -}}
+{{- $hl := transform.HighlightCodeBlock . (dict "noClasses" false) -}}
+<figure class="listing sheet-listing">
+<figcaption class="listing-cap"><span class="listing-lang">sheet</span></figcaption>
+<tsv-sheet source="{{ .Inner }}">{{ $hl.Wrapped }}</tsv-sheet>
+</figure>
