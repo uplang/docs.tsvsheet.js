@@ -1,6 +1,6 @@
 {
-  "baseURL": "https://example.org/",
-  "title": "Project Documentation",
+  "baseURL": "https://uplang.github.io/docs.tsvsheet.js/",
+  "title": "tsvsheet.js",
   "publishDir": "_site",
   "enableRobotsTXT": true,
   "markup": {
@@ -12,6 +12,6 @@
     }
   },
   "params": {
-    "description": "Public documentation for the project."
+    "description": "@uplang/tsvsheet — the tsvsheet engine in the browser and Node, as embedded WebAssembly with a typed API and a <tsv-sheet> web component."
   }
 }
