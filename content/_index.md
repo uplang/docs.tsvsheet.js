@@ -37,7 +37,7 @@ const engine = await load();
 const view = engine.compute("1\t2\n=A1+B1\t=A1*B1\n");
 view.computed; // [["1","2"],["3","2"]] — the value grid
 view.diagnostics; // static findings (unknown functions, bad references)
-view.volatile; // true if any cell uses TODAY()/NOW()/ISNOW()
+view.volatile; // true if any cell is wrapped in volatile()
 
 // Edit a cell — returns the new, recomputed view (immutably):
 const edited = engine.setCell(source, 0, 0, "5");
@@ -61,7 +61,7 @@ Drop a live spreadsheet into any page — no framework:
 <tsv-sheet src="budget.tsvt"></tsv-sheet>
 ```
 
-The element loads the engine, renders the computed grid, and recomputes live as you edit a cell. Volatile sheets (`TODAY`/`NOW`/`ISNOW`) tick against the viewer's own clock.
+The element loads the engine, renders the computed grid, and recomputes live as you edit a cell. Volatile sheets — those wrapping a cell in `volatile()` (around `TODAY`/`NOW`/`ISNOW`, `RAND`, `TICK`, …) — tick against the viewer's own clock.
 
 ## Typed
 
