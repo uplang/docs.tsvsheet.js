@@ -24,3 +24,12 @@ build: ## Build the docs site into _site
 .PHONY: clean
 clean: ## Remove the built site
 	rm -rf $(here)_site $(here)resources
+
+# The demo engine: the Go engine compiled to WebAssembly, pinned by version and
+# re-downloaded from the go-tsvsheet release — never a hand-built local copy.
+# (The <tsv-sheet> bundle still comes from `make assets`; only the engine is
+# version-pinned here.) Bump WASM_VERSION to adopt a new engine.
+WASM_VERSION := v0.9.2
+.PHONY: wasm
+wasm: ## Re-download the pinned engine wasm into static/tsvsheet
+	gh release download $(WASM_VERSION) --repo tsvsheet/go-tsvsheet --pattern 'tsvsheet.wasm' --output $(here)static/tsvsheet/tsvsheet.wasm --clobber
