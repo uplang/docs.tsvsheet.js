@@ -29,7 +29,7 @@ clean: ## Remove the built site
 # re-downloaded from the go-tsvsheet release — never a hand-built local copy.
 # (The <tsv-sheet> bundle still comes from `make assets`; only the engine is
 # version-pinned here.) Bump WASM_VERSION to adopt a new engine.
-WASM_VERSION := v0.9.2
+WASM_VERSION := v0.11.0
 .PHONY: wasm
 wasm: ## Re-download the pinned engine wasm into static/tsvsheet
 	gh release download $(WASM_VERSION) --repo tsvsheet/go-tsvsheet --pattern 'tsvsheet.wasm' --output $(here)static/tsvsheet/tsvsheet.wasm --clobber
